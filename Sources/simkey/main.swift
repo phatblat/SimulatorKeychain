@@ -1,5 +1,6 @@
 import Path
 import SQLite
+import Foundation
 
 let device = "2BB0BA90-51E2-4966-8A91-5A22E8618353"
 let keychain = "keychain-2-debug.db"
@@ -11,8 +12,21 @@ let bundleID = "MTGSZH8QM4.co.log-g.RealmTaskTracker"
 
 let db = try Connection(path.string)
 
+
 // genp table, data column
 // where agrp = bundleID
-for row in try db.prepare("SELECT data FROM genp WHERE agrp = '\(bundleID)'") {
-    print("data: \(row[0])")
-}
+//let data = try db.scalar("SELECT data FROM genp WHERE agrp = '\(bundleID)'")!
+
+
+let genp = Table("genp")
+let groupColumn = Expression<String>("agrp")
+let dataColumn = Expression<Data>("data")
+
+let filteredTable = genp.filter(groupColumn == bundleID)
+let row = try! db.prepare(filteredTable)
+let data = row.map { $0[dataColumn] }.first!
+
+print("data: \(data.datatypeValue)")
+
+let object = try! NSKeyedUnarchiver.unarchiveObject(with: data) as Any
+print(object)
