@@ -1,6 +1,6 @@
 #
 # Makefile
-# SwiftCLI
+# SimulatorKeychain
 #
 
 ################################################################################
@@ -8,7 +8,7 @@
 # Variables
 #
 
-CMD_NAME = swiftcli
+CMD_NAME = simkey
 SHELL = /bin/sh
 
 # trunk

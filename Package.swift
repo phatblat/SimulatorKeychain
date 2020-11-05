@@ -1,22 +1,22 @@
-// swift-tools-version:5.2
+// swift-tools-version:5.3
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 // https://github.com/apple/swift-package-manager/blob/master/Documentation/PackageDescription.md
 
 import PackageDescription
 
 let package = Package(
-    name: "SwiftCLI",
+    name: "SimulatorKeychain",
     platforms: [
         .macOS(.v10_15),
     ],
     products: [
         .executable(
-            name: "swiftcli",
-            targets: ["swiftcli"]),
+            name: "simkey",
+            targets: ["simkey"]),
         .library(
-            name: "SwiftCLIKit",
+            name: "SimulatorKeychainKit",
             type: .dynamic,
-            targets: ["SwiftCLIKit"]),
+            targets: ["SimulatorKeychainKit"]),
     ],
     dependencies: [
         .package(url: "https://github.com/apple/swift-argument-parser", .upToNextMajor(from: "0.3.1")),
@@ -25,16 +25,16 @@ let package = Package(
     ],
     targets: [
         .target(
-            name: "swiftcli",
-            dependencies: ["SwiftCLIKit"]),
+            name: "simkey",
+            dependencies: ["SimulatorKeychainKit"]),
         .target(
-            name: "SwiftCLIKit",
+            name: "SimulatorKeychainKit",
             dependencies: [
                 .product(name: "ArgumentParser", package: "swift-argument-parser")
             ]),
         .testTarget(
-            name: "SwiftCLIKitTests",
-            dependencies: ["SwiftCLIKit", "Quick", "Nimble"]),
+            name: "SimulatorKeychainKitTests",
+            dependencies: ["SimulatorKeychainKit", "Quick", "Nimble"]),
     ],
     swiftLanguageVersions: [.v5]
 )

@@ -1,3 +1,3 @@
-struct SwiftCLIKit {
+struct SimulatorKeychain {
     var text = "Hello, World!"
 }

@@ -1,3 +1,3 @@
-struct SwiftCLI {
+struct SimulatorKeychainKit {
     var text = "Hello, World!"
 }

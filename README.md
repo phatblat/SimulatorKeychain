@@ -1,10 +1,10 @@
-# SwiftCLI
+# SimulatorKeychain
 
 A template for Swift projects using the Swift Package Manager. Includes 3 targets:
 
-- `swiftcli`: an executable
-- `SwiftCLIKit`: a library/framework to hold all logic
-- `SwiftCLIKitTests`: tests for the library
+- `simkey`: an executable
+- `SimulatorKeychainKit`: a library/framework to hold all logic
+- `SimulatorKeychainKitTests`: tests for the library
 
 The reason for putting all logic in the library is because an executable target
 is not a bundle and thus Xcode can't run tests against it.
