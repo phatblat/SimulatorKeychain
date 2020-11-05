@@ -19,6 +19,7 @@ let package = Package(
             targets: ["SimulatorKeychainKit"]),
     ],
     dependencies: [
+        .package(url: "https://github.com/stephencelis/SQLite.swift.git", .upToNextMajor(from: "0.12.2")),
         .package(url: "https://github.com/apple/swift-argument-parser", .upToNextMajor(from: "0.3.1")),
         .package(url: "https://github.com/Quick/Quick", .upToNextMajor(from: "3.0.0")),
         .package(url: "https://github.com/Quick/Nimble", .upToNextMajor(from: "9.0.0")),
