@@ -1,0 +1,4 @@
+module CwlCatchExceptionSupport {
+    umbrella "/System/Volumes/Data/development/swift/SimulatorKeychain/.build/checkouts/CwlCatchException/Sources/CwlCatchExceptionSupport/include"
+    export *
+}

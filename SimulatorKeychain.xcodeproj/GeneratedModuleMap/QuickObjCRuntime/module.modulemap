@@ -1,0 +1,4 @@
+module QuickObjCRuntime {
+    umbrella "/System/Volumes/Data/development/swift/SimulatorKeychain/.build/checkouts/Quick/Sources/QuickObjCRuntime/include"
+    export *
+}
