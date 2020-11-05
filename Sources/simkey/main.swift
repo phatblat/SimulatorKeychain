@@ -13,3 +13,6 @@ let db = try Connection(path.string)
 
 // genp table, data column
 // where agrp = bundleID
+for row in try db.prepare("SELECT data FROM genp WHERE agrp = '\(bundleID)'") {
+    print("data: \(row[0])")
+}
