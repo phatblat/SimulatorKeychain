@@ -30,3 +30,42 @@ print("data: \(data.datatypeValue)")
 
 let object = try! NSKeyedUnarchiver.unarchiveObject(with: data) as Any
 print(object)
+
+/* SecurityFoundation types
+ data layout:
+ root: nil
+ SFInitializationVector
+ SFCiphertext
+ SFAuthenticationCode
+ <object data>
+
+ SFAuthenticatedCiphertext
+ SFAuthenticatedCiphertext
+ SFCiphertext
+ <object data>
+
+ uuid
+
+ root: nil
+ SFInitializationVector
+ SFCiphertext
+ SFAuthenticationCode
+ <object data>
+
+ SFAuthenticatedCiphertext
+ SFAuthenticatedCiphertext
+ SFCiphertext
+ <object data>
+
+ root: nil
+ SFInitializationVector
+ SFCiphertext
+ SFAuthenticationCode
+ <object data>
+
+ SFAuthenticatedCiphertext
+ SFAuthenticatedCiphertext
+ SFCiphertext
+ <object data>
+ uuid
+*/
